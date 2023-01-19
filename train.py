@@ -5,7 +5,7 @@ from torchvision import datasets, transforms
 from ConvNet import ConvNet
 
 
-BATCH_SIZE = 512
+BATCH_SIZE = 512 if torch.cuda.is_available() else 12
 EPOCHS = 20
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
